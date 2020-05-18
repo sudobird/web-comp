@@ -1,0 +1,63 @@
+$active-date-bg: #49BFF9;
+$in-range-bg: #E9F6FC;
+$date-hover-bg: #E9F6FC;
+
+.month-calendar-wrapper {
+  width: 100%;
+  .week-day-names, .month-dates {
+    display: flex;
+    color: gray;
+    flex-wrap: wrap;
+    font-size: 12px;
+    div {
+      width: 14.28%;
+      text-align: center;
+      padding: 10px 0;
+    }
+  }
+
+  .month-dates {
+    margin-top: 10px;
+    .date {
+      position: relative;
+      &:hover {
+        cursor: pointer;
+        background-color: $date-hover-bg;
+        border-radius: 50%;
+      }
+    }
+
+    .first-date {
+      position: absolute;
+      height: 100%;
+      width: 50%;
+      top: 0;
+      left: 0;
+      background-color: white;
+    }
+    .second-date {
+      position: absolute;
+      height: 100%;
+      width: 50%;
+      top: 0;
+      left: 50%;
+      background-color: white;
+    }
+    .selected-date-bg {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      background-color: $active-date-bg;
+      color: white;
+    }
+    .in-range {
+      background-color: $in-range-bg;
+      &:hover {
+        border-radius: 0;
+      }
+    }
+  }
+}

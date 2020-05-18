@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.date-picker {
+  width: 250px;
+  min-height: 300px;
+  background-color: white;
+  padding: 0 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px -5px rgba(0,0,0,0.61);
+  display: flex;
+  flex-direction: column;
+}

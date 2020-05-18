@@ -1,0 +1,38 @@
+$active-el: #49BFF9;
+
+.ym-header-wrapper {
+  display: flex;
+  padding: 10px 0;
+  color: gray;
+
+  .arrow {
+    border: solid $active-el;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+
+  .arrow-container {
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .month-year-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+}
