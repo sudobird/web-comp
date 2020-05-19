@@ -10,6 +10,7 @@ const createWebComponent = (Component) => {
   return class extends HTMLElement {
     constructor() {
       super();
+      this.root = this.attachShadow({mode: 'open'});
       this.observer = new MutationObserver((mutations, observer) => {
         this.updateProps(mutations, observer)
       });
@@ -17,12 +18,10 @@ const createWebComponent = (Component) => {
     }
 
     updateProps(mutations, observer) {
-      console.log('update props', mutations, observer);
       this.mount();
     }
 
     connectedCallback() {
-      this.root = this.attachShadow({mode: 'open'});
       this.mount();
     }
 
@@ -51,7 +50,7 @@ const createWebComponent = (Component) => {
     }
 
     unMount() {
-      this.root.innerHTML = '';
+      render(null, this.root);
     }
   }
 };

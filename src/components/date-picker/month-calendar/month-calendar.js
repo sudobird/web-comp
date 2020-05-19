@@ -7,7 +7,6 @@ export default class MonthCalendar extends Component {
   constructor(props) {
     super(props);
     this.state = this.initializeStateFromProps(props);
-    console.log(this.state);
   }
 
   componentWillReceiveProps(nextProps, nextContext) {

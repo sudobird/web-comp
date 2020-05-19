@@ -18,13 +18,25 @@ export default class DatePickerContainer extends Component {
     this.changeMonth = this.changeMonth.bind(this);
     this.emitCalendarValues = this.emitCalendarValues.bind(this);
 
-    this.state = this.initializeState(props);
+    const today = new Date();
+    this.state = {
+      currentView: VIEWS.CALENDAR,
+      currentYear: today.getFullYear(),
+      currentMonth: today.getMonth(),
+      first: null,
+      second: null
+    };
+    this.state = {
+      ...this.state,
+      ...this.initializeState(props)
+    };
 
     this.setChildrenProps(this.state, props);
   }
 
   componentWillReceiveProps(nextProps, nextContext) {
-
+    const newStateObj = this.initializeState(nextProps);
+    this.setState(newStateObj);
   }
 
   getNewDateFromDate(date) {
@@ -33,13 +45,11 @@ export default class DatePickerContainer extends Component {
   }
 
   initializeState(props) {
-    const today = new Date();
     const stateObj = {
-      currentView: VIEWS.CALENDAR,
-      currentYear: props.hasOwnProperty('year') ? Number(props.year) : today.getFullYear(),
-      currentMonth: props.hasOwnProperty('month') ? Number(props.month) : today.getMonth(),
-      first: props.hasOwnProperty('start-date') ? this.getNewDateFromDate(props['start-date']) : null,
-      second: props.hasOwnProperty('end-date') ? this.getNewDateFromDate(props['end-date']) : null,
+      currentYear: props.hasOwnProperty('year') ? Number(props.year) : this.state.currentYear,
+      currentMonth: props.hasOwnProperty('month') ? Number(props.month) : this.state.currentMonth,
+      first: props.hasOwnProperty('start') ? this.getNewDateFromDate(props['start']) : this.state.first,
+      second: props.hasOwnProperty('end') ? this.getNewDateFromDate(props['end']) : this.state.second,
       isRange: props.range === 'true',
       isRangeInMotion: false,
       rangeSelected: false,
@@ -87,8 +97,8 @@ export default class DatePickerContainer extends Component {
     if (!this.state.isRange) {
       data['date-selected'] = values.first;
     } else {
-      data['start-date'] = values.first;
-      data['end-date'] = values.second;
+      data['start'] = values.first;
+      data['end'] = values.second;
     }
     this.props.dispatchEvent('date-click', data);
   }
