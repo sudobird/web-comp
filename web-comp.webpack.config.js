@@ -21,7 +21,8 @@ module.exports = {
   }, {}),
   output: {
     path: path.join(__dirname, '/web-comp'),
-    filename: './[name]/main.[contenthash].js'
+    filename: './[name]/main.[contenthash].js',
+    jsonpFunction: 'wpJsonpWebComp'
   },
   // devtool : 'inline-source-map',
   optimization: {

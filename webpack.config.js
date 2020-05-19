@@ -5,7 +5,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'preact-bundle.js'
+    filename: 'preact-bundle.js',
+    jsonpFunction: 'wpJsonpWebComp'
   },
   devtool : 'inline-source-map',
   plugins: [
