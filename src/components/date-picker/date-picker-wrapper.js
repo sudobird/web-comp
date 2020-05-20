@@ -9,24 +9,35 @@ export default class DatePickerWrapper extends Component {
       visible: true
     };
 
+    this.switchListenerPresent = false;
   }
 
-  togglePicker() {
-    this.setState({
-      visible: !this.state.visible
-    });
+  componentWillReceiveProps(nextProps, nextContext) {
+    this.setSwitchListener(nextProps);
   }
 
   componentDidMount() {
-    if(this.props.switch) {
-      const switchElement = document.getElementById(this.props.switch);
+    this.setSwitchListener(this.props);
+  }
+
+  setSwitchListener(props) {
+    if (props.switch && !this.switchListenerPresent) {
+      const switchElement = document.getElementById(props.switch);
       if (!switchElement) {
         return;
       }
       switchElement.addEventListener('click', ev => {
         this.togglePicker();
       });
+      this.togglePicker(); // this is done hide date picker by default if switch present
+      this.switchListenerPresent = true;
     }
+  }
+
+  togglePicker() {
+    this.setState({
+      visible: !this.state.visible
+    });
   }
 
   getStyles() {
