@@ -45,7 +45,6 @@ const createWebComponent = (Component) => {
     }
 
     disconnectedCallback() {
-      this.observer.disconnect();
       this.unMount();
     }
 
