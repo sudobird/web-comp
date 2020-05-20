@@ -1,0 +1,11 @@
+{
+  "name": "@webcomp/preact-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.cc2f009fee41f7659c06.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

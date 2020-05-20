@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React and Webpack4</title>
+
+  <style>
+    input {
+      background-color: gray;
+    }
+  </style>
+  
+</head>
+<body>
+
+  <sb-date-picker position="manual" id="testthis" range="true"></sb-date-picker>
+
+  <script src="core/main.js"></script>
+
+  <script src="date-picker/main.js"></script>
+  <script>
+
+    var datePicker = document.getElementById("testthis");
+    datePicker.addEventListener('date-click', function(e){
+      console.log(e.detail);
+    });
+  </script>
+</body>
+</html>

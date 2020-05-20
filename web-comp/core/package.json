@@ -1,0 +1,15 @@
+{
+  "name": "@web-comp/core",
+  "version": "1.0.0",
+  "description": "core module powering sudobird web components ",
+  "main": "main.c18890e6ff8d41b8fd3b.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sudobird",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/sudobird/web-comp.git"
+  },
+  "license": "ISC"
+}
