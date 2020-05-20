@@ -152,7 +152,7 @@ export default class MonthCalendar extends Component {
   render(props, state, context) {
     return (
       <Styler styles={styles}>
-        <div className="month-calendar-wrapper">
+        <div className={this.props.readonly ? 'month-calendar-wrapper freeze-events' : 'month-calendar-wrapper'}>
           <div className="week-day-names">
             {
               SHORT_DAY_NAMES.map(day => (

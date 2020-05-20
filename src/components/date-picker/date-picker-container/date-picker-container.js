@@ -46,6 +46,7 @@ export default class DatePickerContainer extends Component {
 
   initializeState(props) {
     const stateObj = {
+      readonly: props.readonly === 'true',
       currentYear: props.hasOwnProperty('year') ? Number(props.year) : this.state.currentYear,
       currentMonth: props.hasOwnProperty('month') ? Number(props.month) : this.state.currentMonth,
       first: props.hasOwnProperty('start') ? this.getNewDateFromDate(props['start']) : this.state.first,

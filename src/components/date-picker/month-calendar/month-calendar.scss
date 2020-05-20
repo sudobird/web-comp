@@ -61,3 +61,7 @@ $date-hover-bg: #E9F6FC;
     }
   }
 }
+
+.freeze-events {
+  pointer-events: none;
+}

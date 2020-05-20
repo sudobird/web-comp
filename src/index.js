@@ -9,11 +9,12 @@ const dispatchEvent = (eventName, data) => {
 const Components = () => {
   return(
     <div>
-      <DatePickerWrapper switch='picker-switch' position='manual'
+      <DatePickerWrapper position='manual'
                          range='true'
+                         readonly='true'
                          dispatchEvent={dispatchEvent}
-                         end-date={new Date(2020, 4, 7).toString()}
-                         start-date={new Date().toString()}></DatePickerWrapper>
+                         end={new Date(2020, 4, 7).toString()}
+                         start={new Date().toString()}></DatePickerWrapper>
       <br/>
       <PreactApp name="jain"></PreactApp>
     </div>
