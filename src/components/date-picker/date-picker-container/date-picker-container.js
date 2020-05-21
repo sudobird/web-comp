@@ -55,12 +55,11 @@ export default class DatePickerContainer extends Component {
       isRangeInMotion: false,
       rangeSelected: false,
     };
-
-    stateObj.isRangeInMotion = stateObj.isRange && stateObj.first && !stateObj.second;
-    stateObj.rangeSelected = stateObj.isRange && stateObj.first && stateObj.second;
+    stateObj.isRangeInMotion = !!(stateObj.isRange && stateObj.first && !stateObj.second);
+    stateObj.rangeSelected = !!(stateObj.isRange && stateObj.first && stateObj.second);
 
     // sort dates
-    if (stateObj.first > stateObj.second) {
+    if (stateObj.first && stateObj.second &&  (stateObj.first > stateObj.second)) {
       const temp = stateObj.second;
       stateObj.second = stateObj.first;
       stateObj.first = temp;

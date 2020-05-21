@@ -1,8 +1,8 @@
 {
   "name": "@web-comp/date-picker",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Date range picker web component for (angular, react, etc.)",
-  "main": "main.7d838e54067101ed603e.js",
+  "main": "main.fcbe3cac07e43e3f3048.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
