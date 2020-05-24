@@ -11,7 +11,6 @@ const Components = () => {
     <div>
       <DatePickerWrapper position='manual'
                          range='true'
-                         readonly='true'
                          dispatchEvent={dispatchEvent}
                          end={new Date(2020, 4, 7).toString()}
                          start={new Date().toString()}></DatePickerWrapper>

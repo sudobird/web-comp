@@ -1,4 +1,5 @@
 $bg: #E9F6FC;
+$bg-l: #b9bcbd;
 $active-el: #49BFF9;
 
 .ym-slider-wrapper {
@@ -34,13 +35,14 @@ $active-el: #49BFF9;
     }
 
     .year-container {
-      margin-left: 30px;
+      margin-left: 25px;
       position: relative;
       width: 120px;
       height: 120px;
       border-radius: 125px;
       border: 3px solid $bg;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       font-size: 25px;
@@ -53,6 +55,26 @@ $active-el: #49BFF9;
         border-radius: 50%;
         cursor: pointer;
         z-index: 3;
+      }
+    }
+
+    .year-mover {
+      margin-left: 15px;
+
+      .tri-up {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 15px solid $bg-l;
+      }
+      .tri-down {
+        margin-top: 10px;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 15px solid $bg-l;
       }
     }
   }

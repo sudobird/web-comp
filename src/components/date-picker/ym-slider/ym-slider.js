@@ -97,6 +97,16 @@ export default class YmHeader extends Component {
     })
   }
 
+  yearMoverClicked(inc) {
+    const yearSelected = this.state.yearSelected + inc;
+    const deg = inc > 0 ? (this.state.prevDeg + this.state.unit) : (this.state.prevDeg - this.state.unit);
+    this.setState({
+      yearSelected,
+      startDeg: deg,
+      prevDeg: deg
+    }, this.initializeYearSlider);
+  }
+
   applyClicked() {
     this.props.changeYearMonth(this.state.yearSelected, this.state.monthSelected);
   }
@@ -121,8 +131,12 @@ export default class YmHeader extends Component {
               }
             </div>
             <div className="year-container" ref={this.yearContainer}>
-              {this.state.yearSelected}
+              <div>{this.state.yearSelected}</div>
               <div className="year-slider" ref={this.yearSlider}></div>
+            </div>
+            <div className='year-mover'>
+              <div className='tri-up' onClick={() => this.yearMoverClicked(1)}></div>
+              <div className='tri-down' onClick={() => this.yearMoverClicked(-1)}></div>
             </div>
           </div>
           <div className="cta-container">
