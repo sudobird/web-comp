@@ -1,6 +1,6 @@
 {
   "name": "@web-comp/date-picker",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "Date range picker web component for (angular, react, etc.)",
   "main": "main.8b41086a1cc86125a5ba.js",
   "scripts": {
@@ -15,6 +15,7 @@
     "web component"
   ],
   "author": "sudobird",
+  "homepage": "https://github.com/sudobird/web-comp/tree/master/web-comp/date-picker#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/sudobird/web-comp.git"
