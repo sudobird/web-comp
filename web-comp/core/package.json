@@ -1,8 +1,8 @@
 {
   "name": "@web-comp/core",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "core module powering sudobird web components ",
-  "main": "main.27dec96f638351ee5da1.js",
+  "main": "main.4c095c87604003ea7a7a.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

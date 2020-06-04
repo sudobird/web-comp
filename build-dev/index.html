@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React and Webpack4</title>
+
+  <style>
+    input {
+      background-color: gray;
+    }
+
+    .json-container {
+      border: 1px solid gray;
+      height: 200px;
+      overflow: auto;
+    }
+  </style>
+  
+</head>
+<body>
+
+<!--  <wc-date-picker position="manual" id="testthis" range="true"></wc-date-picker>-->
+<!--  <wc-hello-world></wc-hello-world>-->
+  <div class="json-container">
+    <wc-json-viewer id="test"></wc-json-viewer>
+  </div>
+
+
+  <script src="core/main.js"></script>
+  <script src="date-picker/main.js"></script>
+  <script src="hello-world/main.js"></script>
+  <script src="json-viewer/main.js"></script>
+  <script>
+    let data = {
+      name: 'aayush jain',
+      age: 89,
+      bool: false,
+      int: 0,
+      emp: {},
+      ins: [
+        4,
+        5,
+        {
+          abc: [],
+          def: 45,
+          date: new Date(),
+          nullValue: null,
+          und: undefined
+        }
+      ],
+      company: {
+        name: 'springboard'
+      }
+    };
+
+    // data = 'asdf';
+
+    var a = document.getElementById("test");
+    a.setConfig({data});
+
+  </script>
+</body>
+</html>

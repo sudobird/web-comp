@@ -1,0 +1,85 @@
+$key: #8d2696;
+$string: #b60013;
+$number: #171bff;
+$bool: #171bff;
+$caret: gray;
+$defaultValue: #646464;
+
+* {
+  box-sizing: border-box;
+}
+
+.json-viewer-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  font-family: sans-serif;
+  overflow: auto;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: left;
+
+
+  .json-tree-wrapper {
+    padding-left: 10px;
+
+    .default-value {
+      color: $defaultValue;
+    }
+    .string-value {
+      color: $string;
+    }
+    .number-value {
+      color: $number;
+    }
+    .boolean-value {
+      color: $bool;
+    }
+
+    .key {
+      color: $key;
+      position: relative;
+    }
+    .key.expandable {
+      cursor: pointer;
+    }
+    .key.close {
+      &::before {
+        color: $caret;
+        content: '\25B8';
+        position: absolute;
+        left: -8px;
+      }
+    }
+    .key.open {
+      &::before {
+        color: $caret;
+        content: '\25BE';
+        position: absolute;
+        left: -8px;
+      }
+    }
+
+    .collapsed-value {
+      color: $defaultValue;
+    }
+
+    .collapse {
+      &>.expanded-value {
+        display: none;
+      }
+      &>.collapsed-value {
+        display: inline;
+      }
+    }
+
+    .expand {
+      &>.expanded-value {
+        display: inline;
+      }
+      &>.collapsed-value {
+        display: none;
+      }
+    }
+  }
+}

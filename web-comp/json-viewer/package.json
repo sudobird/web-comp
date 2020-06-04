@@ -1,0 +1,28 @@
+{
+  "name": "@web-comp/json-viewer",
+  "version": "1.0.0",
+  "description": "Console like JSON Viewer template.",
+  "main": "main.ee9b587d1adc4cc16530.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JSON Viewer",
+    "collapsible JSON",
+    "JSON in template",
+    "angular",
+    "react",
+    "vue",
+    "web component"
+  ],
+  "author": "sudobird",
+  "homepage": "https://github.com/sudobird/web-comp/tree/master/web-comp/json-viewer#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sudobird/web-comp.git"
+  },
+  "license": "ISC",
+  "peerDependencies": {
+    "@web-comp/core": "latest"
+  }
+}

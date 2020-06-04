@@ -10,6 +10,7 @@ const createWebComponent = (Component) => {
   return class extends HTMLElement {
     constructor() {
       super();
+      this.config = {};
       this.root = this.attachShadow({mode: 'open'});
       this.observer = new MutationObserver((mutations, observer) => {
         this.updateProps(mutations, observer)
@@ -30,6 +31,14 @@ const createWebComponent = (Component) => {
       render(<Component {...props}/>, this.root);
     }
 
+    setConfig(config) {
+      if (Object.prototype.toString.call(config) === '[object Object]') {
+        this.config = config;
+        this.mount();
+      }
+      //TODO: else throw error or warning
+    }
+
     getProps() {
       let props = {};
       props = [...this.attributes].reduce((propsObj, attr) => {
@@ -37,6 +46,7 @@ const createWebComponent = (Component) => {
         return propsObj;
       }, props);
 
+      props.config = this.config;
       props.dispatchEvent = (eventName, data) => {
         const event = new CustomEvent(eventName, {detail: data});
         this.dispatchEvent(event);
