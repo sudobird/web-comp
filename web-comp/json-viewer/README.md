@@ -1,13 +1,13 @@
 # JSON Viewer
 
-JSON viewer in templates as collapsible tree structure
+Collapsible JSON viewer in tree format with console like UI. 
 
 ### Installation:
 ```
 npm install @web-comp/core
 npm install @web-comp/json-viewer
 ```
-> Date picker depends on @web-comp/core to work.
+> json viewer depends on @web-comp/core to work.
 
 ### Usage:
 ```
@@ -15,21 +15,21 @@ import '@web-comp/core';
 import '@web-comp/json-viewer';
 ```
 
-template -
+template:
 ```
 <div> // container div
-    <wc-json-viewer id="myjson"></wc-date-picker>
+    <wc-json-viewer id="myjson"></wc-json-viewer>
 </div>
 ```
 
 JS - 
 ```
 const element = document.getElementById("myjson");
-const jsonData = {name: 'sudobird', ........};      //should be array or object
+const jsonData = {name: 'sudobird', ........};      // json array or object
 element.setConfig({data: jsonData});
 ```
 
-### Example -  
+### Example:
 
 ```
 const jsonData = {
@@ -47,35 +47,38 @@ const jsonData = {
 }
 ```
 
-<img src="https://github.com/sudobird/web-comp/blob/master/src/components/date-picker/docs/single-date-screen.png?raw=true" alt="single date selection" width="200"/> <img src="https://github.com/sudobird/web-comp/blob/master/src/components/date-picker/docs/range-screen.png?raw=true" alt="date range selection" width="200"/> <img src="https://github.com/sudobird/web-comp/blob/master/src/components/date-picker/docs/ym-screen.png?raw=true" alt="year month selector" width="200"/>
+<img src="https://github.com/sudobird/web-comp/blob/master/src/components/json-viewer/docs/viewer.png?raw=true" height="400px"/> <img src="https://github.com/sudobird/web-comp/blob/master/src/components/json-viewer/docs/viewer.gif?raw=true" height="400px"/>
 
-...............................................................................................
 
-## Usage with Angular - 
-- ```npm install @web-comp/core @web-comp/date-picker```
+## Usage with Angular:
+- ```npm install @web-comp/core @web-comp/json-viewer```
 - set ```schemas: [CUSTOM_ELEMENTS_SCHEMA]``` in the module. 
 - import core module and json-viewer module.
 ```
 import '@web-comp/core';
-import '@web-comp/date-picker';
+import '@web-comp/json-viewer';
 ```
 
 ```
- <wc-json-viewer id="picker"></wc-date-picker>
+ <wc-json-viewer #jsonview></wc-json-viewer>
 ```
 
 ```
-@ViewChild('picker') picker;
+@ViewChild('jsonview') jsonview;
 ....
 const jsonData = {....} // your json
-this.picker.nativeElement.setConfig({data: jsonData});
+this.jsonview.nativeElement.setConfig({data: jsonData});
 ```
 
 
-## Usage with React -
-Mostly same as angular, install and import modules (core and json viewer). 
+## Usage with React:
+Install and import modules (core and json viewer)
 ```
-<wc-json-viewer ref="jsonRef"></wc-date-picker>
+import '@web-comp/core';
+import '@web-comp/json-viewer';
+
+
+<wc-json-viewer ref="jsonRef"></wc-json-viewer>
 
 // in JS
 componentDidMount() {
