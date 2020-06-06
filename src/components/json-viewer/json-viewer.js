@@ -8,7 +8,7 @@ export default class JsonViewer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: (props.config && props.config.data) ? props.config.data : {}
+      data: (props.config && props.config.data) ? props.config.data : null
     }
   }
 
@@ -36,7 +36,6 @@ export default class JsonViewer extends Component {
   //     }
   //   };
   //
-  //   // data = {}
   //
   //   this.setState({
   //     data
