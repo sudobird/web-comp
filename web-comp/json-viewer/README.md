@@ -1,6 +1,6 @@
 # JSON Viewer
 
-Collapsible JSON viewer in tree format with console like UI. 
+Collapsible JSON viewer in tree format with console like UI. This is a web component embeddable in any framework (react, angular, vue etc.) or just vanilla js.
 
 ### Installation:
 ```
