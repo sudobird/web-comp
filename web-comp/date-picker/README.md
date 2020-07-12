@@ -2,17 +2,15 @@
 
 This is a date picker web component which can be plugged in any framework (angular, react, vue etc.)
 
-### To install - 
+### Install:
 ```
 npm install @web-comp/core
 npm install @web-comp/date-picker
 ```
 > Date picker depends on @web-comp/core to work.
 
-import core module and date picker module using *script* tag or using *import*.
-Usage is as simple as -
+### Usage:
 
-template -
 ```
 <div class="container" style="position: relative;">
     <img src="calendar-icon.png" id="calendar-icon" />
@@ -20,8 +18,7 @@ template -
 </div>
 
 ```
-
-JS - 
+ 
 ```
 const picker = document.getElementById("picker");
 picker.addEventListener('date-click', (e) => {
@@ -43,7 +40,7 @@ You can use viewChild in angular and ref in React to access picker component and
 ## Usage with Angular - 
 - ```npm install @web-comp/core @web-comp/date-picker```
 - set ```schemas: [CUSTOM_ELEMENTS_SCHEMA]``` in the module where you are using date picker. this is a module property just like providers.
-- import core module and date picker module where you want to use or just one time in root app module. 
+    
 ```
 import '@web-comp/core';
 import '@web-comp/date-picker';
@@ -57,12 +54,8 @@ import '@web-comp/date-picker';
     [attr.end]="conf.end">
 </wc-date-picker>
 ```
+
 - listen to date-click event in ts file. 
-
-> Since its not an angular component, if you want to provide dynamic values from ts file use will need to use attribute binding like this [attr.start] and access ts value. 
-> You can set the dates conf values to null in ts file if you want to remove that attribute. 
-> It won't work like normal angular {{ }}.
-
 ```
 @ViewChild('picker') picker;
 ....
@@ -70,10 +63,12 @@ this.picker.nativeElement.addEventListener('date-click', (e) => {
   console.log(e.detail); // it will contain the dates selected. 
 });
 ```
-
+> Since its not an angular component, if you want to provide dynamic values from ts file you will need to use attribute binding like this [attr.start] and access ts value. 
+> You can set the dates conf values to null in ts file if you want to remove that attribute. 
+> It won't work like normal angular {{ }}.
 
 ## Usage with React -
-Mostly same as angular, install and import modules (core and date picker). 
+Mostly same as angular, install and import modules (core and date picker).
 ```
 <div style={{position: 'relative'}}>
     <img src="calendar-icon.png" id="picker-switch" />

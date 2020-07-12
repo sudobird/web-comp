@@ -1,6 +1,6 @@
 {
   "name": "@web-comp/date-picker",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Date range picker web component for (angular, react, etc.)",
   "main": "main.8b41086a1cc86125a5ba.js",
   "scripts": {
